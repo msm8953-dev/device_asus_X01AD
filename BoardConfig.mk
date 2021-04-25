@@ -108,9 +108,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
-
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
@@ -154,6 +151,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_BOARD_PLATFORM := msm8953
 
 # Power
+TARGET_USES_NON_LEGACY_POWERHAL := true
 TARGET_TAP_TO_WAKE_NODE := "/proc/tpd_gesture"
 
 # Properties
@@ -169,9 +167,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
-
-# Sepolicy - Common
-include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 
 # Sepolicy - X01AD
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
